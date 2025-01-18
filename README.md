@@ -18,3 +18,11 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * List ile Kullanımı
 * Dictionary ile Kullanımı
 
+## 4-LINQ Operatörleri-Filtreleme ve Sıralama
+* IEnumerable, Enumerable, IQueryable, Queryable Nedir?
+* Where
+* OrderBy
+* OrderByDescending
+* ThenBy
+* ThenByDescending
+

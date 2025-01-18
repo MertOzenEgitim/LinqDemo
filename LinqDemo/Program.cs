@@ -1,65 +1,69 @@
-﻿#region LINQ with Array
-//string[] fruits = { "Elma", "Armut", "Kivi", "Muz", "Kiraz" };
+﻿#region Where
 
-//var fruitsStartingWithK=from fruit in fruits
-//                        where fruit.StartsWith("K")
-//                        select fruit;
+//var numbers = new List<int> { 5, 10, 15, 20, 25 };
+//var filteredData = numbers.Where(x => x > 10);
 
-////foreach (var fruit in fruitsStartingWithK)
-////{
-////    Console.WriteLine(fruit);
-////}
-
-
-//var fruitsStartingWithKLambda = fruits.Where(f => f.StartsWith("K"));
-//foreach (var fruit in fruitsStartingWithKLambda)
-//{
-//    Console.WriteLine(fruit);
-//}
-#endregion
-
-#region LINQ with List
-//List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-//var evenNumbers=from number in numbers
-//                where number%2==0
-//                select number;
-////foreach(var number in evenNumbers)
-////{
-////    Console.WriteLine(number);
-////}
-
-//var evenNumbersLambda=numbers.Where(number=>number%2==0);
-//foreach(var number in evenNumbersLambda)
+//foreach (var number in filteredData)
 //{
 //    Console.WriteLine(number);
 //}
-
 #endregion
 
-#region LINQ with Dictionary
+#region OrderBy
 
-Dictionary<int,string> students = new Dictionary<int,string>{
-    {1,"Ali"},
-    {2,"Mert"},
-    {3,"Mehmet"},
-    {4,"Mesut"},
-};
+//var numbers = new List<int> { 10, 5,4, 20, 25 };
+//var orderedData = numbers.OrderBy(x=>x);
 
-var studentsStartingWithM=from student in students
-                          where student.Value.StartsWith("M")
-                          select student;
-
-//foreach (var student in studentsStartingWithM)
+//foreach (var number in orderedData)
 //{
-//    Console.WriteLine($"{student.Key},{student.Value}");
+//    Console.WriteLine(number);
 //}
-
-var studentsStartingWithMLambda=students.Where(x=>x.Value.StartsWith("M"));
-
-foreach (var student in studentsStartingWithMLambda)
-{
-    Console.WriteLine($"{student.Key},{student.Value}");
-}
-
 #endregion
+
+#region OrderByDescending
+
+//var numbers = new List<int> { 10, 5, 4, 20, 25 };
+//var orderedData = numbers.OrderByDescending(x => x);
+
+//foreach (var number in orderedData)
+//{
+//    Console.WriteLine(number);
+//}
+#endregion
+
+#region ThenBy
+
+//var people = new List<(string FirstName,string LastName)> {
+//("Mert","Özen"),
+//("Mert","Deniz"),
+//("Ali","Mutlu"),
+//("Mehmet","Yıldırım"),
+//("Mesut","Kartal")
+//};
+//var orderedData = people.OrderBy(x => x.FirstName)
+//                        .ThenBy(y=>y.LastName);
+
+//foreach (var person in orderedData)
+//{
+//    Console.WriteLine($"{person.FirstName} {person.LastName}");
+//}
+#endregion
+
+#region ThenByDescending
+
+var people = new List<(string FirstName, string LastName)> {
+("Mert","Özen"),
+("Mert","Deniz"),
+("Ali","Mutlu"),
+("Mehmet","Yıldırım"),
+("Mesut","Kartal")
+};
+var orderedData = people.OrderBy(x => x.FirstName)
+                        .ThenByDescending(y => y.LastName);
+
+foreach (var person in orderedData)
+{
+    Console.WriteLine($"{person.FirstName} {person.LastName}");
+}
+#endregion
+
