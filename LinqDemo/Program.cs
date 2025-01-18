@@ -1,35 +1,65 @@
-﻿//int[] numbers = [1, 2, 3, 4, 5];
+﻿#region LINQ with Array
+//string[] fruits = { "Elma", "Armut", "Kivi", "Muz", "Kiraz" };
 
-////LINQ sorugusu
-//var query = from number in numbers
-//            where number > 2
-//            select number;
+//var fruitsStartingWithK=from fruit in fruits
+//                        where fruit.StartsWith("K")
+//                        select fruit;
 
-//foreach (var number in query)
+////foreach (var fruit in fruitsStartingWithK)
+////{
+////    Console.WriteLine(fruit);
+////}
+
+
+//var fruitsStartingWithKLambda = fruits.Where(f => f.StartsWith("K"));
+//foreach (var fruit in fruitsStartingWithKLambda)
+//{
+//    Console.WriteLine(fruit);
+//}
+#endregion
+
+#region LINQ with List
+//List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//var evenNumbers=from number in numbers
+//                where number%2==0
+//                select number;
+////foreach(var number in evenNumbers)
+////{
+////    Console.WriteLine(number);
+////}
+
+//var evenNumbersLambda=numbers.Where(number=>number%2==0);
+//foreach(var number in evenNumbersLambda)
 //{
 //    Console.WriteLine(number);
 //}
 
+#endregion
 
-//string[] names = {"Mert","Mehmet","Mesut","Ali","Veli"};
+#region LINQ with Dictionary
 
-////LINQ sorugusu
-//var query = from name in names
-//            where name.StartsWith("Me")
-//            select name;
+Dictionary<int,string> students = new Dictionary<int,string>{
+    {1,"Ali"},
+    {2,"Mert"},
+    {3,"Mehmet"},
+    {4,"Mesut"},
+};
 
-//foreach (var name in query)
+var studentsStartingWithM=from student in students
+                          where student.Value.StartsWith("M")
+                          select student;
+
+//foreach (var student in studentsStartingWithM)
 //{
-//    Console.WriteLine(name);
+//    Console.WriteLine($"{student.Key},{student.Value}");
 //}
 
+var studentsStartingWithMLambda=students.Where(x=>x.Value.StartsWith("M"));
 
-int[] numbers = [1, 2, 3, 4, 5];
-
-//LINQ sorugusu
-var resultList = numbers.Where(x=>x>2).Select(y=>y*y);
-
-foreach (var result in resultList)
+foreach (var student in studentsStartingWithMLambda)
 {
-    Console.WriteLine(result);
+    Console.WriteLine($"{student.Key},{student.Value}");
 }
+
+#endregion

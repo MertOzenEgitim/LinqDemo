@@ -13,3 +13,8 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * From, Where, Select Kullanımı
 * LINQ Lambda İfadeleri (Lambda Expressions)
 
+## 3-LINQ İle Veri Yapıları
+* Array ile Kullanımı
+* List ile Kullanımı
+* Dictionary ile Kullanımı
+
