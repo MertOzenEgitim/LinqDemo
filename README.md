@@ -1,0 +1,15 @@
+# LINQ Uygulamaları
+Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT1f5a9xv-qLDSwJDLVZsTNidFz) içerisinde anlatılan konulara ait uygulamalar bulunmaktadır.
+
+## 1-Giriş ve Temel Kavramlar
+`NOT:Bu başlık için uygulama yok`
+* LINQ Nedir?
+* LINQ ile SQL Arasındaki Farklar
+* LINQ Çeşitleri: LINQ to Objects, LINQ to SQL, LINQ to XML, LINQ to Entities
+* LINQ Kullanımı için Gerekli Ortam ve Kütüphaneler
+
+## 2-LINQ Sorgu Temelleri
+* LINQ Sorgularının Temel Yapısı
+* From, Where, Select Kullanımı
+* LINQ Lambda İfadeleri (Lambda Expressions)
+
