@@ -26,3 +26,7 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * ThenBy
 * ThenByDescending
 
+## 5-LINQ Operatörleri-Projeksiyon
+* Select
+* SelectMany
+

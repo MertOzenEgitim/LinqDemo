@@ -1,69 +1,61 @@
-﻿#region Where
+﻿using System;
 
-//var numbers = new List<int> { 5, 10, 15, 20, 25 };
-//var filteredData = numbers.Where(x => x > 10);
-
-//foreach (var number in filteredData)
-//{
-//    Console.WriteLine(number);
-//}
-#endregion
-
-#region OrderBy
-
-//var numbers = new List<int> { 10, 5,4, 20, 25 };
-//var orderedData = numbers.OrderBy(x=>x);
-
-//foreach (var number in orderedData)
-//{
-//    Console.WriteLine(number);
-//}
-#endregion
-
-#region OrderByDescending
-
-//var numbers = new List<int> { 10, 5, 4, 20, 25 };
-//var orderedData = numbers.OrderByDescending(x => x);
-
-//foreach (var number in orderedData)
-//{
-//    Console.WriteLine(number);
-//}
-#endregion
-
-#region ThenBy
-
-//var people = new List<(string FirstName,string LastName)> {
-//("Mert","Özen"),
-//("Mert","Deniz"),
-//("Ali","Mutlu"),
-//("Mehmet","Yıldırım"),
-//("Mesut","Kartal")
-//};
-//var orderedData = people.OrderBy(x => x.FirstName)
-//                        .ThenBy(y=>y.LastName);
-
-//foreach (var person in orderedData)
-//{
-//    Console.WriteLine($"{person.FirstName} {person.LastName}");
-//}
-#endregion
-
-#region ThenByDescending
-
-var people = new List<(string FirstName, string LastName)> {
-("Mert","Özen"),
-("Mert","Deniz"),
-("Ali","Mutlu"),
-("Mehmet","Yıldırım"),
-("Mesut","Kartal")
-};
-var orderedData = people.OrderBy(x => x.FirstName)
-                        .ThenByDescending(y => y.LastName);
-
-foreach (var person in orderedData)
+namespace LinqDemo
 {
-    Console.WriteLine($"{person.FirstName} {person.LastName}");
-}
-#endregion
+    #region Select
 
+    //class Employee
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //    public string Department { get; set; }
+    //}
+    //class Program
+    //{
+
+    //    static void Main(string[] args)
+    //    {
+    //        List<Employee> employees = new List<Employee>
+    //        {
+    //            new Employee{Id=1,Name="Mert",Department="IT"},
+    //            new Employee{Id=1,Name="Mehmet",Department="Finance"},
+    //            new Employee{Id=1,Name="Mesut",Department="Sales"}
+    //        };
+
+    //        var employeeList = employees.Select(e=>new { e.Name,e.Department });
+
+    //        foreach (var employee in employeeList)
+    //        {
+    //            Console.WriteLine(employee.Name);
+    //        }
+    //    }
+    //}
+
+    #endregion
+
+    class Student
+    {
+        public string Name { get; set; }
+        public List<string> Courses { get; set; }
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            List<Student> students = new List<Student>
+            {
+                new Student{Name="Mert",Courses=new List<string>{"Math","Physics"} },
+                new Student{Name="Mehmet",Courses=new List<string>{"Chemistry","Biology"}},
+                new Student{Name="Mesut",Courses=new List<string>{"History","Math"}}
+            };
+
+            var allCourses = students.SelectMany(s =>s.Courses);
+
+            foreach (var course in allCourses)
+            {
+                Console.WriteLine(course);
+            }
+        }
+    }
+}
