@@ -30,3 +30,6 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * Select
 * SelectMany
 
+## 6-LINQ Operatörleri-Gruplama
+* GroupBy
+

@@ -1,60 +1,57 @@
 ﻿using System;
 
 namespace LinqDemo
-{
-    #region Select
-
-    //class Employee
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //    public string Department { get; set; }
-    //}
-    //class Program
-    //{
-
-    //    static void Main(string[] args)
-    //    {
-    //        List<Employee> employees = new List<Employee>
-    //        {
-    //            new Employee{Id=1,Name="Mert",Department="IT"},
-    //            new Employee{Id=1,Name="Mehmet",Department="Finance"},
-    //            new Employee{Id=1,Name="Mesut",Department="Sales"}
-    //        };
-
-    //        var employeeList = employees.Select(e=>new { e.Name,e.Department });
-
-    //        foreach (var employee in employeeList)
-    //        {
-    //            Console.WriteLine(employee.Name);
-    //        }
-    //    }
-    //}
-
-    #endregion
-
-    class Student
+{    
+    class Product
     {
         public string Name { get; set; }
-        public List<string> Courses { get; set; }
+        public string Category { get; set; }
+        public double Price { get; set; }
     }
+
     class Program
     {
-
+        
         static void Main(string[] args)
         {
-            List<Student> students = new List<Student>
+            var products = new List<Product>
             {
-                new Student{Name="Mert",Courses=new List<string>{"Math","Physics"} },
-                new Student{Name="Mehmet",Courses=new List<string>{"Chemistry","Biology"}},
-                new Student{Name="Mesut",Courses=new List<string>{"History","Math"}}
+                new Product{Name="Apple",Category="Fruit",Price=5},
+                new Product{Name="Pear",Category="Fruit",Price=5},
+                new Product{Name="Carrot",Category="Vegetable",Price=3},
+                new Product{Name="Zucchine",Category="Vegetable",Price=2},
             };
 
-            var allCourses = students.SelectMany(s =>s.Courses);
+            //var groupedProducts = products.GroupBy(p => p.Category);
 
-            foreach (var course in allCourses)
+            //foreach (var group in groupedProducts)
+            //{
+            //    Console.WriteLine($"Category:{group.Key}");
+            //    foreach (var item in group)
+            //    {
+            //        Console.WriteLine($"Product:{item.Name},Price:{item.Price}");
+            //    }
+            //}
+
+            //var detailedGrouping = products.GroupBy(p => new { p.Category, p.Price }).ToList();
+            //foreach (var group in detailedGrouping)
+            //{
+            //    Console.WriteLine($"Category:{group.Key.Category},Price:{group.Key.Price}");
+            //    foreach (var item in group)
+            //    {
+            //        Console.WriteLine($"Product:{item.Name}");
+            //    }
+            //}
+
+            var detailedPrices = products.GroupBy(p => p.Category)
+                .Select(group => new
+                {
+                    Category= group.Key,
+                    AveragePrice=group.Average(product=>product.Price)
+                });
+            foreach (var group in detailedPrices)
             {
-                Console.WriteLine(course);
+                Console.WriteLine($"Category:{group.Category},Average:{group.AveragePrice}");
             }
         }
     }
