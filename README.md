@@ -33,3 +33,10 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 ## 6-LINQ Operatörleri-Gruplama
 * GroupBy
 
+## 7-LINQ Operatörleri-Matematiksel İşlemler
+* Count
+* Sum
+* Average
+* Min
+* Max
+
