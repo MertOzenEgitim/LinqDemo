@@ -40,3 +40,10 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * Min
 * Max
 
+## 8-LINQ Operatörleri-Birleştirme Operasyonları
+* Distinct
+* Union
+* Intersect
+* Expect
+* Join
+* GroupJoin
