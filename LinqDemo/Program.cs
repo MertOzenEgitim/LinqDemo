@@ -7,76 +7,46 @@ namespace LinqDemo
         
         static void Main(string[] args)
         {
-            //var numbers = new[] { 1, 2, 3,3, 4, 5, 5, 6 };
-            //var distinctNumbers=numbers.Distinct();
-            //Console.WriteLine(string.Join(",",distinctNumbers));
+            //var numbers=new List<int> { 10,20,30,40};
+            //var firstNumber=numbers.First();
+            //var firstNumber=numbers.First(x=>x>10);
+            //var firstNumber = numbers.First(x=>x<10);
+            //var firstNumber = numbers.FirstOrDefault(x=>x<10);
+            //Console.WriteLine(firstNumber);
 
-            //var array1=new[] { 1, 2, 3 };
-            //var array2=new[] { 3,4,5 };
+            //var lastNumber=numbers.Last();
+            //var lastNumber = numbers.Last(x=>x>40);
+            //var lastNumber = numbers.Last(x => x < 40);
+            //var lastNumber = numbers.LastOrDefault(x=>x>40);
 
-            //var unionArray=array1.Union(array2);
-            //Console.WriteLine(string.Join(",", unionArray));
+            //Console.WriteLine(lastNumber);
 
-            //var intersectArray=array1.Intersect(array2);
-            //Console.WriteLine(string.Join(",", intersectArray));
+            //var numbers=new List<int> { 10,10,30,40};
+            //var numbers2=new List<int> {};
 
-            //List<int> list = new List<int>{1,2,3};
-            //List<int> list2 = new List<int>{3,4,5};
+            //var singleNumber = numbers.Single(x=>x==10);
+            //var singleNumber = numbers.Single(x=>x==30);
+            //var singleNumber = numbers2.Single();
+            //var singleNumber = numbers.SingleOrDefault(x=>x==10);
 
-            //var exceptList= list.Except(list2);
-            //Console.WriteLine(string.Join(",", exceptList));
+            //Console.WriteLine(singleNumber);
 
-            var employess = new[]
-            {
-                new {Id=1,Name="Mert"},
-                new {Id=2,Name="Mehmet"},
-                new {Id=3,Name="Mesut"},
-                new {Id=4,Name="Ali"},
-            };
+            //var numbers = new List<int> { 1, 2, 3, 4, 5 };
+            //var firstThree=numbers.Take(3);
 
-            var departments = new[]
-            {
-                new{DepartmentId=1,DepartmentName="HR",EmployeeId=1},
-                new{DepartmentId=2,DepartmentName="IT",EmployeeId=1},
-                new{DepartmentId=3,DepartmentName="Finance",EmployeeId=2},
-                new{DepartmentId=4,DepartmentName="Marketing",EmployeeId=3},
-                new{DepartmentId=5,DepartmentName="Sales",EmployeeId=3},
-            };
+            //Console.WriteLine(string.Join(",",firstThree));
 
-            //var result = from emp in employess
-            //             join dept in departments
-            //             on emp.Id equals dept.EmployeeId
-            //             select new { emp.Name, dept.DepartmentName };
+            //var remaning = numbers.Skip(3);
+            //Console.WriteLine(string.Join(",", remaning));
 
-            //var result = employess.Join(departments,
-            //    emp=>emp.Id,
-            //    dept=>dept.EmployeeId,
-            //    (emp,dept)=>new {emp.Name,dept.DepartmentName});
+            var numbers = new List<int> { 1, 2, 3, 1, 1,2,4,5 };
 
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine($"Name: {item.Name}, Department: {item.DepartmentName}");
-            //}
+            //var result = numbers.TakeWhile(x => x < 3);
+            //var result = numbers.Where(x => x < 3);
+            //Console.WriteLine(string.Join(",", result));
 
-            //var result = from emp in employess
-            //             join dept in departments
-            //             on emp.Id equals dept.EmployeeId into employeeDepartments
-            //             select new { emp.Name, Departments = employeeDepartments };
-
-            var result = employess.GroupJoin(departments,
-                emp=>emp.Id,
-                dept=>dept.EmployeeId,
-                (emp,depts)=>new {emp.Name,Departments=depts}
-                );
-
-            foreach (var item in result)
-            {
-                Console.WriteLine($"Name: {item.Name}");
-                foreach (var dept in item.Departments)
-                {
-                    Console.WriteLine($" Department: {dept.DepartmentName}");
-                }
-            }
+            var result = numbers.SkipWhile(x => x < 3);
+            Console.WriteLine(string.Join(",", result));
         }
     }
 }

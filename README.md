@@ -47,3 +47,15 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * Expect
 * Join
 * GroupJoin
+
+## 9-LINQ Operatörleri-Diğer
+* First
+* FirstOrDefault
+* Last
+* LastOrDefault
+* Single
+* SingleOrDefault
+* Take
+* Skip
+* TakeWhile
+* SkipWhile
