@@ -59,3 +59,9 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * Skip
 * TakeWhile
 * SkipWhile
+
+## 10-LINQ ile Koleksiyon İşlemleri
+* Koleksiyonlardan Eleman Çekme
+* Koleksiyonları Manipüle Etme (Ekleme, Çıkarma ve Güncelleme)
+* Nested Koleksiyonlarla Çalışma
+
