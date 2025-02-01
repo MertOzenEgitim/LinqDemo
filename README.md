@@ -65,3 +65,10 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * Koleksiyonları Manipüle Etme (Ekleme, Çıkarma ve Güncelleme)
 * Nested Koleksiyonlarla Çalışma
 
+## 11-Performans ve Optimizasyon
+* LINQ Sorgularının Performans Etkisi
+* Deferred Execution Kavramı
+* Immediate Execution Kavramı
+* DotnetBenchmark İle Performans Testi
+
+
