@@ -11,42 +11,42 @@ namespace LinqDemo
     [MemoryDiagnoser]
     public class BenchmarkTest
     {
-        List<Person> personList;
-        [GlobalSetup]
-        public void GlobalSetup()
-        {
-            personList = new List<Person>
-            {
-                new Person
-                {
-                    FirstName="Mert",
-                    LastName="Özen",
-                    Age=30,
-                    City="İstanbul"
-                },
-                new Person
-                {
-                    FirstName="Mehmet",
-                    LastName="Özen",
-                    Age=28,
-                    City="Ankara"
-                },
-                new Person
-                {
-                    FirstName="Ali",
-                    LastName="Veli",
-                    Age=28,
-                    City="Kastamonu"
-                },
-                new Person
-                {
-                    FirstName="Mesut",
-                    LastName="Özen",
-                    Age=26,
-                    City="İzmir"
-                }
-            };
-        }
+        //List<Person> personList;
+        //[GlobalSetup]
+        //public void GlobalSetup()
+        //{
+        //    personList = new List<Person>
+        //    {
+        //        new Person
+        //        {
+        //            FirstName="Mert",
+        //            LastName="Özen",
+        //            Age=30,
+        //            City="İstanbul"
+        //        },
+        //        new Person
+        //        {
+        //            FirstName="Mehmet",
+        //            LastName="Özen",
+        //            Age=28,
+        //            City="Ankara"
+        //        },
+        //        new Person
+        //        {
+        //            FirstName="Ali",
+        //            LastName="Veli",
+        //            Age=28,
+        //            City="Kastamonu"
+        //        },
+        //        new Person
+        //        {
+        //            FirstName="Mesut",
+        //            LastName="Özen",
+        //            Age=26,
+        //            City="İzmir"
+        //        }
+        //    };
+        //}
         //[Benchmark]
         //public List<Person> FilteredList()
         //{
@@ -81,25 +81,25 @@ namespace LinqDemo
         //    return orderedPersonList;
         //}
 
-        [Benchmark]
-        public List<PersonDto> ProjectList()
-        {
-            var projectedPersonList = personList.OrderByDescending(x => x.Age)
-                .Select(y => new PersonDto { FirstName = y.FirstName, LastName = y.LastName, Age = y.Age })
-                .Where(x => x.Age > 26).ToList();
+        //[Benchmark]
+        //public List<PersonDto> ProjectList()
+        //{
+        //    var projectedPersonList = personList.OrderByDescending(x => x.Age)
+        //        .Select(y => new PersonDto { FirstName = y.FirstName, LastName = y.LastName, Age = y.Age })
+        //        .Where(x => x.Age > 26).ToList();
 
-            projectedPersonList = projectedPersonList.Where(x => x.Age < 30).ToList();
+        //    projectedPersonList = projectedPersonList.Where(x => x.Age < 30).ToList();
 
-            return projectedPersonList;
-        }
-        [Benchmark]
-        public List<PersonDto> ProjectListOptimized()
-        {
-            var projectedPersonList = personList.Where(x => x.Age > 26 && x.Age < 30)
-                .Select(y => new PersonDto { FirstName = y.FirstName, LastName = y.LastName, Age = y.Age })
-                .OrderByDescending(x => x.Age).ToList();
+        //    return projectedPersonList;
+        //}
+        //[Benchmark]
+        //public List<PersonDto> ProjectListOptimized()
+        //{
+        //    var projectedPersonList = personList.Where(x => x.Age > 26 && x.Age < 30)
+        //        .Select(y => new PersonDto { FirstName = y.FirstName, LastName = y.LastName, Age = y.Age })
+        //        .OrderByDescending(x => x.Age).ToList();
 
-            return projectedPersonList;
-        }
+        //    return projectedPersonList;
+        //}
     }
 }
