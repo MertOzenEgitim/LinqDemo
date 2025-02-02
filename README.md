@@ -79,4 +79,15 @@ Bu repoda [LINQ Oynatma Listesi](https://www.youtube.com/playlist?list=PL2gZB_AT
 * * Todo Analizi
 * * Coğrafi Analiz
 
-
+## 13-Veri ile Çalışmak-2
+* Jsonplaceholder Verileri ile LINQ Yardımcı Sorgular Oluşturma
+* * `Select:` Kullanıcı verilerini özet formatta projekte et (ID, kısaltılmış isim ve şehir)
+* * `OrderBy/ThenBy:` Postları önce kullanıcı ID'sine sonra başlık uzunluğuna göre sırala
+* * `Count:` "important" veya "urgent" içeren yorumları say
+* * `Take/Skip:` Sayfalama yaparak 2. sayfadaki postları getir
+* * `Any/All:` Tüm görevleri tamamlanmamış en az bir kullanıcı olup olmadığını kontrol et
+* * `FirstOrDefault:` Belirli kriterlere uyan ilk postu getirir
+* * `Distinct:` Kullanıcıların benzersiz posta kodlarını listele
+* * `GroupBy:` Postları 100'lük karakter gruplarına göre kategorize et
+* * `Aggregate:` En uzun e-posta adresini bul
+* * `SelectMany:` İç içe koleksiyonlardan (kullanıcı->albüm->fotoğraf) tek liste oluştur
